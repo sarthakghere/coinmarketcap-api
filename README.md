@@ -1,4 +1,4 @@
-# CoinMarketCap Scraper
+# CoinMarketCap API
 
 This project is a web scraper designed to collect cryptocurrency data from CoinMarketCap and save it to a Django-based backend. The data includes price, market cap, volume, circulating supply, total supply, and more. The project also includes an API to retrieve the collected data.
 
@@ -26,8 +26,8 @@ This project is a web scraper designed to collect cryptocurrency data from CoinM
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/coinmarketcap-scraper.git
-   cd coinmarketcap-scraper
+   git clone https://github.com/sarthakghere/coinmarketcap-api.git
+   cd coinmarketcap-api
    ```
 
 2. **Create and Activate Virtual Environment**
@@ -69,7 +69,7 @@ To start the scraping task, send a POST request to the `/api/taskmanager/start_s
 ```json
 POST /api/taskmanager/start_scraping
 {
-    "coins": ["bitcoin", "ethereum", "dogecoin"]
+    "coins": ["BITCOIN", "ETHEREUM", "DOGECOIN"]
 }
 ```
 
