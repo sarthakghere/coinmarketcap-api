@@ -1,0 +1,7 @@
+django
+djangorestframework
+environs
+selenium
+bs4
+pyperclip
+openpyxl
