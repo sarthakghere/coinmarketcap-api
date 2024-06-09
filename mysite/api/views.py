@@ -5,12 +5,21 @@ from rest_framework.response import Response
 from .serializers import JobSerializer, CoinSerializer
 from .coinmarketcap import CoinMarketCap
 from .models import Job, Coin
+from rest_framework.exceptions import ValidationError
 from .tasks import start_scraping_job
+import re
 
 class StartScraping(APIView):
     def post(self, request):
         data = request.data
         coins = data["coins"]
+
+        if not isinstance(coins, list):
+            return Response({"error": "'coins' should be a list."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not all(isinstance(coin, str) and re.match("^[A-Z]+$", coin) for coin in coins):
+            return Response({"error": "All items in 'coins' should be strings"}, status=status.HTTP_400_BAD_REQUEST)
+        
         serializer = JobSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
