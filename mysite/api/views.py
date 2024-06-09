@@ -24,7 +24,10 @@ class StartScraping(APIView):
         if serializer.is_valid():
             serializer.save()
             start_scraping_job(job=serializer.instance, coins=coins)
-        return Response(serializer.instance.id, status=status.HTTP_200_OK)
+        data = {
+            "job_id" : serializer.instance.id
+        }
+        return Response(data, status=status.HTTP_200_OK)
 
 class GetCoinData(APIView):
     def get(self, request, job_id):

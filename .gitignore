@@ -1,0 +1,3 @@
+venv
+output
+mysite/db.sqlite3
