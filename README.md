@@ -9,7 +9,6 @@ This project is a web scraper designed to collect cryptocurrency data from CoinM
 - [API Endpoints](#api-endpoints)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 
 ## Installation
 
