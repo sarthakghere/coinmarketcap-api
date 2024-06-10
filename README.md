@@ -46,6 +46,7 @@ This project is a web scraper designed to collect cryptocurrency data from CoinM
 4. **Setup Django**
 
    ```sh
+   cd mysite
    python manage.py makemigrations
    python manage.py migrate
    python manage.py createsuperuser
